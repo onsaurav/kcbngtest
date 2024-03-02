@@ -1,8 +1,20 @@
-<main class="main">
-  <div class="content">
-    <h1>KCB [ng] Test</h1>
-    <hr />
-  </div>
-</main>
+<div class="container-fluid">
+  <main class="main">
+    <div class="content">
+      <h1 class="title">KCB [ng] Test</h1>
+      <hr class="purpleDivider" />
 
-<router-outlet />
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="myText"
+          [style.width.px]="myTextWidth"
+        />
+        <label style="margin-left: 50px">{{ myText }}</label>
+      </div>
+    </div>
+  </main>
+
+  <router-outlet />
+</div>
