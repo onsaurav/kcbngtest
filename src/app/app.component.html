@@ -1,17 +1,19 @@
 <div class="container-fluid">
-  <main class="main">
+  <main class="main" style="margin-bottom: 50px;">
     <div class="content">
-      <h1 class="title">KCB [ng] Test</h1>
+      <h1 class="title">{{ title | uppercase }}</h1>
       <hr class="purpleDivider" />
 
       <div class="form-group">
-        <input
-          type="text"
-          class="form-control"
-          [(ngModel)]="myText"
-          [style.width.px]="myTextWidth"
-        />
-        <label style="margin-left: 50px">{{ myText }}</label>
+        <div>
+          <input type="text" class="form-control" [(ngModel)]="myText" [style.width.px]="myTextWidth"/>
+          <label style="margin-left: 50px">{{ myText }}</label>
+        </div>
+
+        Change the rating <input style="width:70px;" type="number" [(ngModel)]="ratingNumber" min="1" max="100" (change)="calculateRatingValue()" />
+        <div style="width: 200px; border: 1px solid orangered; margin-top: 10px; border-radius: 5px;">          
+          <label style="width: 100%; background-color: orangered; text-align: center;" [style.width.px]="ratingValue">{{ ratingNumber }}</label>
+        </div>
       </div>
     </div>
   </main>

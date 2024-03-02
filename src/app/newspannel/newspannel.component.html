@@ -1,0 +1,27 @@
+<div>
+    <h1>NEWS PANNEL</h1>
+    <hr />
+    
+    <div>
+        <div>
+            <input type="text" style="margin-top: 15px" class="form-control" [(ngModel)]="txtMessage" [style.width.px]="350" />
+            <button class="btn btn-secondary" style="margin-top: 15px" (click)="addMessage()">Send Message</button>
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <app-newsdetails [myMessages]="messages" (sendCommentEvent)="addComment($event)" ></app-newsdetails>
+        </div>
+
+        <div class="col-6">
+            <div>
+                <div *ngFor="let comment of comments">
+                    <span>{{comment}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
