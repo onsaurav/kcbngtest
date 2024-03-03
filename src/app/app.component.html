@@ -5,9 +5,11 @@
       <hr class="purpleDivider" />
 
       <div class="form-group">
-        <div>
+        <div  style="width: 50%; margin-top: 50px; margin-bottom: 50px; padding:25px; border: 1px solid purple; border-radius:10px;">
           <input type="text" class="form-control" [(ngModel)]="myText" [style.width.px]="myTextWidth"/>
-          <label style="margin-left: 50px">{{ myText }}</label>
+          <div style="margin-top: 20px;">
+            <p>{{ myText }}</p>
+          </div>
         </div>
 
         Change the rating <input style="width:70px;" type="number" [(ngModel)]="ratingNumber" min="1" max="100" (change)="calculateRatingValue()" />
