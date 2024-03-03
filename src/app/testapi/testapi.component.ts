@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { TestService } from '../service/test.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TestService } from '../service/test.service';
+import { Weather } from '../model/weather';
 
 @Component({
   selector: 'app-testapi',
   standalone: true,
-  imports: [],
-  providers: [CommonModule, FormsModule, TestService],
+  imports: [CommonModule, FormsModule],
+  providers: [TestService],
   templateUrl: './testapi.component.html',
   styleUrl: './testapi.component.css'
 })
@@ -16,13 +17,12 @@ export class TestapiComponent {
     this.loadApiResult();
   }
 
-  result: any = [];
+  result: any;
   errorMessage: string = "";
 
   loadApiResult():void {
-    this.result = this.testService.getApiResult().subscribe({
-      next: data => this.result = data,
-      error: err => this.errorMessage = err
+    this.testService.getApiResult().subscribe((result) => {
+      this.result = result.data;
     });
   }
 

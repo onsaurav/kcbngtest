@@ -1,6 +1,10 @@
-<h1>API Results</h1>
-<hr />
-
-<div *ngFor="let item of result">
-    <div style="margin: 10px; padding:10px; border:1px solid purple;">A-B-C</div>
+<div style="margin: 50px;">
+  <h2>Year wise population</h2>
+  <div *ngFor="let item of result" class="resultDiv">
+    <div>
+      <h3>{{ item.Nation }}</h3>
+      <hr />
+      <div>Population: {{ item.Population }} / Year: {{ item.Year }}</div>
+    </div>
+  </div>
 </div>

@@ -2,18 +2,17 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { NewspannelComponent } from './newspannel/newspannel.component';
-import { HttpClientModule } from '@angular/common/http';
+import { NewspannelComponent } from '../newspannel/newspannel.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-others',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, CommonModule, NewspannelComponent, HttpClientModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [RouterOutlet, FormsModule, CommonModule, NewspannelComponent],
+  providers: [],
+  templateUrl: './others.component.html',
+  styleUrl: './others.component.css'
 })
-
-export class AppComponent {
+export class OthersComponent {
   title = 'KCB [ng] Test';
   myText: string = "";
   myTextWidth: number = 500;
@@ -23,5 +22,4 @@ export class AppComponent {
   calculateRatingValue(): void {
     this.ratingValue = Math.round(200 * (this.ratingNumber / 100));
   }
-
 }
