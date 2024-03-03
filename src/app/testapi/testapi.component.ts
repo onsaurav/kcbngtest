@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TestService } from '../service/test.service';
-import { Weather } from '../model/weather';
-
+import { TestService } from '../../service/test.service';
+import { Weather } from '../../model/weather';
 @Component({
   selector: 'app-testapi',
   standalone: true,
